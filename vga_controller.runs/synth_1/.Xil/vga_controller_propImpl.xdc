@@ -1,6 +1,6 @@
 set_property SRC_FILE_INFO {cfile:D:/Proiecte_PSN/vga_controller/vga_controller.srcs/constrs_1/new/vga_controller.xdc rfile:../../../vga_controller.srcs/constrs_1/new/vga_controller.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN W5 [get_ports CLK]
+set_property PACKAGE_PIN W5 [get_ports CLK_100]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G19 [get_ports {VGA_RED_O[0]}]
 set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]

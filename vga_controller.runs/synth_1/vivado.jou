@@ -2,8 +2,8 @@
 # Vivado v2021.2.1 (64-bit)
 # SW Build 3414424 on Sun Dec 19 10:57:22 MST 2021
 # IP Build 3405791 on Sun Dec 19 15:54:35 MST 2021
-# Start of session at: Mon Apr 11 22:27:15 2022
-# Process ID: 1808
+# Start of session at: Tue Apr 12 11:52:22 2022
+# Process ID: 5760
 # Current directory: D:/Proiecte_PSN/vga_controller/vga_controller.runs/synth_1
 # Command line: vivado.exe -log vga_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_controller.tcl
 # Log file: D:/Proiecte_PSN/vga_controller/vga_controller.runs/synth_1/vga_controller.vds

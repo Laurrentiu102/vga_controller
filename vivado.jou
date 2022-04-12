@@ -13,3 +13,16 @@
 start_gui
 open_project D:/Proiecte_PSN/vga_controller/vga_controller.xpr
 update_compile_order -fileset sources_1
+close [ open D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd w ]
+add_files D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
