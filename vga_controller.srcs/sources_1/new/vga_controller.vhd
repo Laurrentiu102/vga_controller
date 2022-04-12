@@ -6,6 +6,7 @@ use ieee.math_real.all;
 
 entity vga_controller is 
 	Port ( CLK_100 : in STD_LOGIC;
+	       IMAGE: in STD_LOGIC_VECTOR(1 downto 0);
 	       VGA_RED_I : in STD_LOGIC_VECTOR (3 downto 0);
  		   VGA_BLUE_I : in STD_LOGIC_VECTOR (3 downto 0);
  		   VGA_GREEN_I : in STD_LOGIC_VECTOR (3 downto 0);
@@ -58,6 +59,9 @@ signal vga_blue_cmb: std_logic_vector(3 downto 0):="1111";
 signal vga_red : std_logic_vector(3 downto 0) := (others =>'0');
 signal vga_green : std_logic_vector(3 downto 0) := (others =>'0');
 signal vga_blue : std_logic_vector(3 downto 0) := (others =>'0');
+
+--Images
+constant patrat: std_logic_vector(1 downto 0):="00";
 
 --Clock modifier
 component clk_mul is
@@ -125,9 +129,22 @@ begin
          		VSdly <= VS;
          		HSdly <= HS;
 				if active='1' then
-					vga_red    <= vga_red_cmb;
-         			vga_green  <= vga_green_cmb;
-         			vga_blue   <= vga_blue_cmb;
+				    case IMAGE is
+				        when patrat =>
+				            if hPos >=200 and hPos<=400 and vPos>=200 and vPos<=400 then
+				                vga_red    <= vga_red_cmb;
+         			            vga_green  <= vga_green_cmb;
+         			            vga_blue   <= vga_blue_cmb;
+         			        else
+         			            vga_red    <= "0000";
+         			            vga_green  <= "0000";
+         			            vga_blue   <= "0000";
+         			        end if;
+         			     when others =>
+         			        vga_red    <= "0000";
+         			        vga_green  <= "0000";
+         			        vga_blue   <= "0000";
+				    end case;
 				else
 					vga_red    <= "0000";
          			vga_green  <= "0000";
