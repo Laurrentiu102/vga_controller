@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2.1 (64-bit)
+# SW Build 3414424 on Sun Dec 19 10:57:22 MST 2021
+# IP Build 3405791 on Sun Dec 19 15:54:35 MST 2021
+# Start of session at: Mon Apr 11 20:46:15 2022
+# Process ID: 5060
+# Current directory: D:/Proiecte_PSN/vga_controller/vga_controller.runs/impl_1
+# Command line: vivado.exe -log vga_controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source vga_controller.tcl -notrace
+# Log file: D:/Proiecte_PSN/vga_controller/vga_controller.runs/impl_1/vga_controller.vdi
+# Journal file: D:/Proiecte_PSN/vga_controller/vga_controller.runs/impl_1\vivado.jou
+# Running On: LAURPC, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 4, Host memory: 17096 MB
+#-----------------------------------------------------------
+source vga_controller.tcl -notrace
