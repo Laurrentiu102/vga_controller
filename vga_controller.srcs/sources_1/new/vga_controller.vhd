@@ -5,7 +5,7 @@ use IEEE.std_logic_unsigned.all;
 use ieee.math_real.all;
 
 entity vga_controller is 
-	Port ( CLK : in STD_LOGIC;
+	Port ( CLK_100 : in STD_LOGIC;
 	       VGA_RED_I : in STD_LOGIC_VECTOR (3 downto 0);
  		   VGA_BLUE_I : in STD_LOGIC_VECTOR (3 downto 0);
  		   VGA_GREEN_I : in STD_LOGIC_VECTOR (3 downto 0);
@@ -59,8 +59,16 @@ signal vga_red : std_logic_vector(3 downto 0) := (others =>'0');
 signal vga_green : std_logic_vector(3 downto 0) := (others =>'0');
 signal vga_blue : std_logic_vector(3 downto 0) := (others =>'0');
 
+--Clock modifier
+component clk_mul is
+    port(clk_in1 : in std_logic;
+         clk_out1 : out std_logic);
+end component;
+
+signal clk: std_logic:='0';
+
 begin  
-	
+        clk_modifier : clk_mul port map(CLK_100,clk);
 		horizontal_counter:process (clk)
          begin
            if (rising_edge(clk)) then
