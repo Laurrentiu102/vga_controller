@@ -22,9 +22,9 @@ entity vga_controller is
  		   LED1: out STD_LOGIC;
  		   LED2: out STD_LOGIC;
  		   LED3: out STD_LOGIC;
- 		   LED4: out STD_LOGIC);
+ 		   LED4: out STD_LOGIC;
+ 		   LEDB: out STD_LOGIC);
 end vga_controller;
-
 
 architecture Behavioral of vga_controller is
 
@@ -54,15 +54,6 @@ signal vPos : natural := 0;
 signal HS : std_logic := not(H_POL);
 signal VS : std_logic := not(V_POL);
 
--- Pipe Horizontal and Vertical Sync
-signal HSdly : std_logic := not(H_POL);
-signal VSdly : std_logic :=not(V_POL);
-
--- VGA R, G and B signals coming from buttons
-signal vga_red_cmb : std_logic_vector(3 downto 0):="1111";
-signal vga_green_cmb : std_logic_vector(3 downto 0):="1111";
-signal vga_blue_cmb: std_logic_vector(3 downto 0):="1111";
-
 -- Register VGA R, G and B signals
 signal vga_red : std_logic_vector(3 downto 0) := (others =>'0');
 signal vga_green : std_logic_vector(3 downto 0) := (others =>'0');
@@ -91,7 +82,20 @@ signal BTNDC: std_logic:='0';
 signal BTNLC: std_logic:='0';
 signal BTNRC: std_logic:='0';
 
+--Hroizontal and vertical position modifiers
+signal xPos : natural:=0;
+signal yPos : natural:=0;
+
+--Clk divider for buttons
+component clk_divider is   
+	port(clk100:in std_logic;
+	clk1:out std_logic);
+end component;
+
+signal clkb: std_logic;
+
 begin  
+        clk_butons:clk_divider port map(CLK_100,clkb);
         clk_modifier : clk_mul port map(CLK_100,clk);
         ebu:debouncer port map(CLK,BTNU,BTNUC);
         debd:debouncer port map(CLK,BTND,BTNDC);
@@ -102,6 +106,7 @@ begin
         LED2<=BTNUC;
         LED3<=BTNRC;
         LED4<=BTNDC;
+        LEDB<=clkb;
         
 		horizontal_counter:process (clk)
          begin
@@ -149,22 +154,37 @@ begin
 		 
 		active <= '1' when hPos < HD and vPos < VD else '0';
 		
-		vga_red_cmb<=vga_red_i;
-		vga_green_cmb<=vga_green_i;
-		vga_blue_cmb<=vga_blue_i;
+		clk_buttons:process(clkb)
+		begin
+		if (rising_edge(clkb)) then
+		  if BTNDC='1' and (yPos<VD-400) then
+       		       yPos<=yPos+1;
+       		    end if;
+       		    
+       		    if BTNUC='1' and yPos>0 then
+       		       yPos<=yPos-1;
+       		    end if;
+       		    
+       		    if BTNRC='1' and (xPos<HD-400) then
+       		       xPos<=xPos+1;
+       		    end if;
+       		    
+       		    if BTNLC='1' and xPos>0 then
+       		       xPos<=xPos-1;
+       		    end if;
+       	end if;
+		end process;
 			 
 		draw:process (clk)
      	 begin
        		if (rising_edge(clk)) then
-         		VSdly <= VS;
-         		HSdly <= HS;
 				if active='1' then
 				    case IMAGE is
 				        when patrat =>
-				            if hPos >=200 and hPos<=400 and vPos>=200 and vPos<=400 then
-				                vga_red    <= vga_red_cmb;
-         			            vga_green  <= vga_green_cmb;
-         			            vga_blue   <= vga_blue_cmb;
+				            if hPos>=xPos and hPos<=(xPos+400) and vPos>=yPos and vPos<=(yPos+400) then
+				                vga_red    <= vga_red_i;
+         			            vga_green  <= vga_green_i;
+         			            vga_blue   <= vga_blue_i;
          			        else
          			            vga_red    <= "0000";
          			            vga_green  <= "0000";
@@ -183,8 +203,8 @@ begin
        		end if;
      	end process;
 	 	
-		VGA_HS_O     <= HSdly;
-     	VGA_VS_O     <= VSdly;
+		VGA_HS_O     <= HS;
+     	VGA_VS_O     <= VS;
      	VGA_RED_O    <= vga_red;
      	VGA_GREEN_O  <= vga_green;
      	VGA_BLUE_O   <= vga_blue;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1649792476">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1649801156">
   <File Type="ROUTE-PWR" Name="vga_controller_power_routed.rpt"/>
   <File Type="PA-TCL" Name="vga_controller.tcl"/>
   <File Type="BITSTR-MMI" Name="vga_controller.mmi"/>
@@ -78,6 +78,12 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/bist_d.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clk_divider.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

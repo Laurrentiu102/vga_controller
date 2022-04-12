@@ -112,6 +112,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports {LED3}]
 set_property PACKAGE_PIN U16 [get_ports {LED4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {LED4}]
 
+set_property PACKAGE_PIN L1 [get_ports {LEDB}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LEDB}]
+
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 set_property CONFIG_MODE SPIx4 [current_design]
