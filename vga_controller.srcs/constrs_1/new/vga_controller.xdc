@@ -88,6 +88,30 @@ set_property IOSTANDARD LVCMOS33 [get_ports {IMAGE[1]}]
 set_property PACKAGE_PIN V17 [get_ports {IMAGE[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {IMAGE[0]}]
 
+set_property PACKAGE_PIN T18 [get_ports {BTNU}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTNU}]
+
+set_property PACKAGE_PIN T17 [get_ports {BTNR}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTNR}]
+
+set_property PACKAGE_PIN W19 [get_ports {BTNL}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTNL}]
+
+set_property PACKAGE_PIN U17 [get_ports {BTND}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTND}]
+
+set_property PACKAGE_PIN V19 [get_ports {LED1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LED1}]
+
+set_property PACKAGE_PIN U19 [get_ports {LED2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LED2}]
+
+set_property PACKAGE_PIN E19 [get_ports {LED3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LED3}]
+
+set_property PACKAGE_PIN U16 [get_ports {LED4}]
+set_property IOSTANDARD LVCMOS33 [get_ports {LED4}]
+
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 set_property CONFIG_MODE SPIx4 [current_design]

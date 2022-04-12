@@ -6,6 +6,10 @@ use ieee.math_real.all;
 
 entity vga_controller is 
 	Port ( CLK_100 : in STD_LOGIC;
+	       BTNU: in STD_LOGIC;
+	       BTND: in STD_LOGIC;
+	       BTNL: in STD_LOGIC;
+	       BTNR: in STD_LOGIC;
 	       IMAGE: in STD_LOGIC_VECTOR(1 downto 0);
 	       VGA_RED_I : in STD_LOGIC_VECTOR (3 downto 0);
  		   VGA_BLUE_I : in STD_LOGIC_VECTOR (3 downto 0);
@@ -14,7 +18,11 @@ entity vga_controller is
  	 	   VGA_VS_O : out STD_LOGIC;
  		   VGA_RED_O : out STD_LOGIC_VECTOR (3 downto 0);
  		   VGA_BLUE_O : out STD_LOGIC_VECTOR (3 downto 0);
- 		   VGA_GREEN_O : out STD_LOGIC_VECTOR (3 downto 0));
+ 		   VGA_GREEN_O : out STD_LOGIC_VECTOR (3 downto 0);
+ 		   LED1: out STD_LOGIC;
+ 		   LED2: out STD_LOGIC;
+ 		   LED3: out STD_LOGIC;
+ 		   LED4: out STD_LOGIC);
 end vga_controller;
 
 
@@ -71,8 +79,30 @@ end component;
 
 signal clk: std_logic:='0';
 
+--Debouncer
+component debouncer is
+    port(CLK: in STD_LOGIC;
+         BTN: in STD_LOGIC;
+         BTN_NOU: out STD_LOGIC);
+end component;
+
+signal BTNUC: std_logic:='0';
+signal BTNDC: std_logic:='0';
+signal BTNLC: std_logic:='0';
+signal BTNRC: std_logic:='0';
+
 begin  
         clk_modifier : clk_mul port map(CLK_100,clk);
+        ebu:debouncer port map(CLK,BTNU,BTNUC);
+        debd:debouncer port map(CLK,BTND,BTNDC);
+        debl:debouncer port map(CLK,BTNL,BTNLC);
+        debr:debouncer port map(CLK,BTNR,BTNRC);
+        
+        LED1<=BTNLC;
+        LED2<=BTNUC;
+        LED3<=BTNRC;
+        LED4<=BTNDC;
+        
 		horizontal_counter:process (clk)
          begin
            if (rising_edge(clk)) then

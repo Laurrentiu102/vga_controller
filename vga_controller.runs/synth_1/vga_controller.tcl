@@ -88,7 +88,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/bist_d.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd
 }
 OPTRACE "Adding files" END { }
