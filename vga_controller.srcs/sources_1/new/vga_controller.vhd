@@ -20,16 +20,16 @@ end vga_controller;
 architecture Behavioral of vga_controller is
 
 --***1280x1024@60Hz***--
-constant FRAME_WIDTH : natural := 1280;
-constant FRAME_HEIGHT : natural := 1024;
+constant HD : natural := 1280;
+constant VD : natural := 1024;
 
-constant H_FP : natural := 48; --H front porch width (pixels)
-constant H_PW : natural := 112; --H sync pulse width (pixels)
-constant H_MAX : natural := 1688; --H total period (pixels)
+constant HFP : natural := 48; --H front porch width (pixels)
+constant HSP : natural := 112; --H sync pulse width (pixels)
+constant HMAX : natural := 1688; --H total period (pixels)
 
-constant V_FP : natural := 1; --V front porch width (lines)
-constant V_PW : natural := 3; --V sync pulse width (lines)
-constant V_MAX : natural := 1066; --V total period (lines)
+constant VFP : natural := 1; --V front porch width (lines)
+constant VSP : natural := 3; --V sync pulse width (lines)
+constant VMAX : natural := 1066; --V total period (lines)
 
 constant H_POL : std_logic := '1';
 constant V_POL : std_logic := '1';
@@ -38,8 +38,8 @@ constant V_POL : std_logic := '1';
 signal active: std_logic;
 
 -- Horizontal and Vertical counters
-signal h_cntr_reg : std_logic_vector(11 downto 0) := (others =>'0');
-signal v_cntr_reg : std_logic_vector(11 downto 0) := (others =>'0');
+signal hPos : std_logic_vector(11 downto 0) := (others =>'0');
+signal vPos : std_logic_vector(11 downto 0) := (others =>'0');
 
 -- Pipe Horizontal and Vertical Counters
 signal h_cntr_reg_dly : std_logic_vector(11 downto 0) := (others => '0');
@@ -52,28 +52,25 @@ signal v_sync_reg : std_logic := not(V_POL);
 signal h_sync_reg_dly : std_logic := not(H_POL);
 signal v_sync_reg_dly : std_logic :=not(V_POL);
 
--- VGA R, G and B signals coming from the main multiplexers
+-- VGA R, G and B signals coming from buttons
 signal vga_red_cmb : std_logic_vector(3 downto 0):="1111";
 signal vga_green_cmb : std_logic_vector(3 downto 0):="1111";
 signal vga_blue_cmb: std_logic_vector(3 downto 0):="1111";
---The main VGA R, G and B signals, validated by active
-signal VGA_RED: std_logic_vector(3 downto 0);
-signal VGA_GREEN: std_logic_vector(3 downto 0);
-signal VGA_BLUE: std_logic_vector(3 downto 0);
+
 -- Register VGA R, G and B signals
-signal vga_red_reg : std_logic_vector(3 downto 0) := (others =>'0');
-signal vga_green_reg : std_logic_vector(3 downto 0) := (others =>'0');
-signal vga_blue_reg: std_logic_vector(3 downto 0) := (others =>'0');
+signal vga_red : std_logic_vector(3 downto 0) := (others =>'0');
+signal vga_green : std_logic_vector(3 downto 0) := (others =>'0');
+signal vga_blue : std_logic_vector(3 downto 0) := (others =>'0');
 
 begin  
 	
 		horizontal_counter:process (clk)
          begin
            if (rising_edge(clk)) then
-             if (h_cntr_reg = (H_MAX - 1)) then
-               h_cntr_reg <= (others =>'0');
+             if (hPos = (HMAX - 1)) then
+               hPos <= (others =>'0');
              else
-               h_cntr_reg <= h_cntr_reg + 1;
+               hPos <= hPos + 1;
              end if;
            end if;
          end process;
@@ -81,10 +78,10 @@ begin
 		vertical_counter:process (clk)
          begin
            if (rising_edge(clk)) then
-             if ((h_cntr_reg = (H_MAX - 1)) and (v_cntr_reg = (V_MAX - 1))) then
-               v_cntr_reg <= (others =>'0');
-             elsif (h_cntr_reg = (H_MAX - 1)) then
-               v_cntr_reg <= v_cntr_reg + 1;
+             if ((hPos = (HMAX - 1)) and (vPos = (VMAX - 1))) then
+               vPos <= (others =>'0');
+             elsif (hPos = (HMAX - 1)) then
+               vPos <= vPos + 1;
              end if;
            end if;
          end process;
@@ -92,7 +89,7 @@ begin
 		horizontal_sync:process (clk)
          begin
            if (rising_edge(clk)) then
-             if (h_cntr_reg >= (H_FP + FRAME_WIDTH - 1)) and (h_cntr_reg < (H_FP + FRAME_WIDTH + H_PW - 1)) then
+             if (hPos >= (HFP + HD - 1)) and (hPos < (HFP + HD + HSP - 1)) then
                h_sync_reg <= H_POL;
              else
                h_sync_reg <= not(H_POL);
@@ -103,7 +100,7 @@ begin
 		vertical_sync:process (clk)
          begin
            if (rising_edge(clk)) then
-             if (v_cntr_reg >= (V_FP + FRAME_HEIGHT - 1)) and (v_cntr_reg < (V_FP + FRAME_HEIGHT + V_PW - 1)) then
+             if (vPos >= (VFP + VD - 1)) and (vPos < (VFP + VD + VSP - 1)) then
                v_sync_reg <= V_POL;
              else
                v_sync_reg <= not(V_POL);
@@ -111,7 +108,7 @@ begin
            end if;
         end process;
 		 
-		active <= '1' when h_cntr_reg < FRAME_WIDTH and v_cntr_reg < FRAME_HEIGHT else '0';
+		active <= '1' when hPos < HD and vPos < VD else '0';
 		
 		vga_red_cmb<=vga_red_i;
 		vga_green_cmb<=vga_green_i;
@@ -123,20 +120,20 @@ begin
          		v_sync_reg_dly <= v_sync_reg;
          		h_sync_reg_dly <= h_sync_reg;
 				if active='1' then
-					vga_red_reg    <= vga_red_cmb;
-         			vga_green_reg  <= vga_green_cmb;
-         			vga_blue_reg   <= vga_blue_cmb;
+					vga_red    <= vga_red_cmb;
+         			vga_green  <= vga_green_cmb;
+         			vga_blue   <= vga_blue_cmb;
 				else
-					vga_red_reg    <= "0000";
-         			vga_green_reg  <= "0000";
-         			vga_blue_reg   <= "0000";
+					vga_red    <= "0000";
+         			vga_green  <= "0000";
+         			vga_blue   <= "0000";
 				end if;      
        		end if;
      	end process;
 	 	
 		VGA_HS_O     <= h_sync_reg_dly;
      	VGA_VS_O     <= v_sync_reg_dly;
-     	VGA_RED_O    <= vga_red_reg;
-     	VGA_GREEN_O  <= vga_green_reg;
-     	VGA_BLUE_O   <= vga_blue_reg;
+     	VGA_RED_O    <= vga_red;
+     	VGA_GREEN_O  <= vga_green;
+     	VGA_BLUE_O   <= vga_blue;
 end architecture;
