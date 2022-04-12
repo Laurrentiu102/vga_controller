@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Tue Apr 12 21:30:39 2022
+| Date             : Tue Apr 12 22:00:27 2022
 | Host             : LAURPC running 64-bit major release  (build 9200)
 | Command          : report_power -file vga_controller_power_routed.rpt -pb vga_controller_power_summary_routed.pb -rpx vga_controller_power_routed.rpx
 | Design           : vga_controller
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      136 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       32 |     20800 |            0.15 |
+| Slice Logic    |    <0.001 |      157 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       51 |     20800 |            0.25 |
 |   CARRY4       |    <0.001 |       16 |      8150 |            0.20 |
 |   Register     |    <0.001 |       78 |     41600 |            0.19 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |    <0.001 |      138 |       --- |             --- |
+| Signals        |    <0.001 |      149 |       --- |             --- |
 | MMCM           |     0.123 |        1 |         5 |           20.00 |
-| I/O            |    <0.001 |       27 |       106 |           25.47 |
+| I/O            |    <0.001 |       29 |       106 |           27.36 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.197 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

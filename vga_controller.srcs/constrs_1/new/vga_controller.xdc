@@ -82,6 +82,12 @@ set_property IOSTANDARD LVCMOS33 [get_ports {VGA_BLUE_I[2]}]
 set_property PACKAGE_PIN W15 [get_ports {VGA_BLUE_I[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {VGA_BLUE_I[3]}]
 
+set_property PACKAGE_PIN V16 [get_ports {IMAGE[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {IMAGE[1]}]
+
+set_property PACKAGE_PIN V17 [get_ports {IMAGE[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {IMAGE[0]}]
+
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 set_property CONFIG_MODE SPIx4 [current_design]

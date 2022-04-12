@@ -53,3 +53,7 @@ set_property src_info {type:XDC file:1 line:79 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN V15 [get_ports {VGA_BLUE_I[2]}]
 set_property src_info {type:XDC file:1 line:82 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W15 [get_ports {VGA_BLUE_I[3]}]
+set_property src_info {type:XDC file:1 line:85 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V16 [get_ports {IMAGE[1]}]
+set_property src_info {type:XDC file:1 line:88 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V17 [get_ports {IMAGE[0]}]
