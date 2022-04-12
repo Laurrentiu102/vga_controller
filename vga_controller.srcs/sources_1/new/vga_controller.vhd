@@ -38,8 +38,8 @@ constant V_POL : std_logic := '1';
 signal active: std_logic;
 
 -- Horizontal and Vertical counters
-signal hPos : std_logic_vector(11 downto 0) := (others =>'0');
-signal vPos : std_logic_vector(11 downto 0) := (others =>'0');
+signal hPos : natural := 0;
+signal vPos : natural := 0;
 
 -- Horizontal and Vertical Sync
 signal HS : std_logic := not(H_POL);
@@ -65,7 +65,7 @@ begin
          begin
            if (rising_edge(clk)) then
              if (hPos = (HMAX - 1)) then
-               hPos <= (others =>'0');
+               hPos <= 0;
              else
                hPos <= hPos + 1;
              end if;
@@ -76,7 +76,7 @@ begin
          begin
            if (rising_edge(clk)) then
              if ((hPos = (HMAX - 1)) and (vPos = (VMAX - 1))) then
-               vPos <= (others =>'0');
+               vPos <= 0;
              elsif (hPos = (HMAX - 1)) then
                vPos <= vPos + 1;
              end if;
