@@ -41,16 +41,13 @@ signal active: std_logic;
 signal hPos : std_logic_vector(11 downto 0) := (others =>'0');
 signal vPos : std_logic_vector(11 downto 0) := (others =>'0');
 
--- Pipe Horizontal and Vertical Counters
-signal h_cntr_reg_dly : std_logic_vector(11 downto 0) := (others => '0');
-signal v_cntr_reg_dly : std_logic_vector(11 downto 0) := (others => '0');
-
 -- Horizontal and Vertical Sync
-signal h_sync_reg : std_logic := not(H_POL);
-signal v_sync_reg : std_logic := not(V_POL);
+signal HS : std_logic := not(H_POL);
+signal VS : std_logic := not(V_POL);
+
 -- Pipe Horizontal and Vertical Sync
-signal h_sync_reg_dly : std_logic := not(H_POL);
-signal v_sync_reg_dly : std_logic :=not(V_POL);
+signal HSdly : std_logic := not(H_POL);
+signal VSdly : std_logic :=not(V_POL);
 
 -- VGA R, G and B signals coming from buttons
 signal vga_red_cmb : std_logic_vector(3 downto 0):="1111";
@@ -90,9 +87,9 @@ begin
          begin
            if (rising_edge(clk)) then
              if (hPos >= (HFP + HD - 1)) and (hPos < (HFP + HD + HSP - 1)) then
-               h_sync_reg <= H_POL;
+               HS <= H_POL;
              else
-               h_sync_reg <= not(H_POL);
+               HS <= not(H_POL);
              end if;
            end if;
          end process;
@@ -101,9 +98,9 @@ begin
          begin
            if (rising_edge(clk)) then
              if (vPos >= (VFP + VD - 1)) and (vPos < (VFP + VD + VSP - 1)) then
-               v_sync_reg <= V_POL;
+               VS <= V_POL;
              else
-               v_sync_reg <= not(V_POL);
+               VS <= not(V_POL);
              end if;
            end if;
         end process;
@@ -117,8 +114,8 @@ begin
 		draw:process (clk)
      	 begin
        		if (rising_edge(clk)) then
-         		v_sync_reg_dly <= v_sync_reg;
-         		h_sync_reg_dly <= h_sync_reg;
+         		VSdly <= VS;
+         		HSdly <= HS;
 				if active='1' then
 					vga_red    <= vga_red_cmb;
          			vga_green  <= vga_green_cmb;
@@ -131,8 +128,8 @@ begin
        		end if;
      	end process;
 	 	
-		VGA_HS_O     <= h_sync_reg_dly;
-     	VGA_VS_O     <= v_sync_reg_dly;
+		VGA_HS_O     <= HSdly;
+     	VGA_VS_O     <= VSdly;
      	VGA_RED_O    <= vga_red;
      	VGA_GREEN_O  <= vga_green;
      	VGA_BLUE_O   <= vga_blue;
