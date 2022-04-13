@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Wed Apr 13 01:30:49 2022
+| Date         : Thu Apr 14 00:28:52 2022
 | Host         : LAURPC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file vga_controller_methodology_drc_routed.rpt -pb vga_controller_methodology_drc_routed.pb -rpx vga_controller_methodology_drc_routed.rpx
 | Design       : vga_controller
@@ -23,13 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 63
-+-----------+------------------+-------------------------------+------------+
-| Rule      | Severity         | Description                   | Violations |
-+-----------+------------------+-------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 62         |
-| TIMING-18 | Warning          | Missing input or output delay | 1          |
-+-----------+------------------+-------------------------------+------------+
+             Violations found: 62
++-----------+------------------+-----------------------------+------------+
+| Rule      | Severity         | Description                 | Violations |
++-----------+------------------+-----------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 62         |
++-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -341,11 +340,6 @@ Related violations: <none>
 TIMING-17#62 Critical Warning
 Non-clocked sequential cell  
 The clock pin yPos_reg[9]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-18#1 Warning
-Missing input or output delay  
-An output delay is missing on LEDB relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 

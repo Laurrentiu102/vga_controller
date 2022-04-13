@@ -100,6 +100,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports {BTNL}]
 set_property PACKAGE_PIN U17 [get_ports {BTND}]
 set_property IOSTANDARD LVCMOS33 [get_ports {BTND}]
 
+set_property PACKAGE_PIN U18 [get_ports {BTNM}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTNM}]
+
 set_property PACKAGE_PIN V19 [get_ports {LED1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {LED1}]
 
@@ -112,8 +115,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {LED3}]
 set_property PACKAGE_PIN U16 [get_ports {LED4}]
 set_property IOSTANDARD LVCMOS33 [get_ports {LED4}]
 
-set_property PACKAGE_PIN L1 [get_ports {LEDB}]
-set_property IOSTANDARD LVCMOS33 [get_ports {LEDB}]
+set_property PACKAGE_PIN W16 [get_ports {MODE}]
+set_property IOSTANDARD LVCMOS33 [get_ports {MODE}]
 
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
