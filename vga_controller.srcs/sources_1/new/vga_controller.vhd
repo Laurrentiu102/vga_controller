@@ -62,6 +62,8 @@ signal vga_blue : std_logic_vector(3 downto 0) := (others =>'0');
 
 --Images
 constant patrat: std_logic_vector(1 downto 0):="00";
+constant cerc: std_logic_vector(1 downto 0):="01";
+constant triunghi: std_logic_vector(1 downto 0):="10";
 constant dinozauri: std_logic_vector(1 downto 0):="11";
 
 --Clock modifier
@@ -636,6 +638,41 @@ begin
                                         vga_green  <= "0000";
                                         vga_blue   <= "0000";
                                     end if;
+                                    
+                                 when cerc =>
+                                    if hPos>=xPos and hPos<=(xPos+400) and vPos>=yPos and vPos<=(yPos+400) then
+                                        if (hPos-(xPos+200))*(hPos-(xPos+200))+(vPos-(yPos+200))*(vPos-(yPos+200))<=200*200 then
+                                            vga_red    <= vga_red_i;
+                                            vga_green  <= vga_green_i;
+                                            vga_blue   <= vga_blue_i;
+                                        else
+                                           vga_red    <= "0000";
+                                           vga_green  <= "0000";
+                                           vga_blue   <= "0000";
+                                        end if;
+                                    else
+                                        vga_red    <= "0000";
+                                        vga_green  <= "0000";
+                                        vga_blue   <= "0000";
+                                    end if;
+                                    
+                                 when triunghi =>
+                                    if hPos>=xPos and hPos<=(xPos+400) and vPos>=yPos and vPos<=(yPos+400) then
+                                        if (vPos-yPos)>=(hPos-xPos) then --and ((vPos-yPos)+(hPos-xPos))>=399 then
+                                            vga_red    <= vga_red_i;
+                                            vga_green  <= vga_green_i;
+                                            vga_blue   <= vga_blue_i;
+                                        else
+                                            vga_red    <= "0000";
+                                            vga_green  <= "0000";
+                                            vga_blue   <= "0000";
+                                        end if;
+                                    else
+                                        vga_red    <= "0000";
+                                        vga_green  <= "0000";
+                                        vga_blue   <= "0000";
+                                    end if;   
+                                    
                                  when dinozauri =>
                                     if hPos>=xPos and hPos<=(xPos+400) and vPos>=yPos and vPos<=(yPos+400) then
                                         if (vPos-yPos)<400 and (vPos-yPos)>=0 and (hPos-xPos)<400 and (hPos-xPos)>=0 then
