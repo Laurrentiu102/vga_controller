@@ -136,9 +136,9 @@ clk_in1_clk_wiz_0 <= clk_in1;
 
   clkout1_buf : BUFG
   port map
-   (O   => clk_out1,
-    I   => clk_out1_clk_wiz_0);
-
+  (O   => clk_out1,
+  I   => clk_out1_clk_wiz_0);
+--clk_out1<=clk_in1;
 
 
 end ARH;

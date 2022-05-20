@@ -2,8 +2,8 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Tue May 10 17:38:16 2022
-# Process ID: 7568
+# Start of session at: Sat May 21 00:40:00 2022
+# Process ID: 19400
 # Current directory: D:/Proiecte_PSN/vga_controller/vga_controller.runs/synth_1
 # Command line: vivado.exe -log vga_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_controller.tcl
 # Log file: D:/Proiecte_PSN/vga_controller/vga_controller.runs/synth_1/vga_controller.vds
@@ -23,16 +23,18 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10288
+INFO: [Synth 8-7075] Helper process launched with PID 8616
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1566.555 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1567.008 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'vga_controller' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:30]
-INFO: [Synth 8-3491] module 'clk_divider' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_divider.vhd:4' bound to instance 'clk_butons' of component 'clk_divider' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:515]
+INFO: [Synth 8-638] synthesizing module 'vga_controller' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:33]
+INFO: [Synth 8-3491] module 'UE' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:6' bound to instance 'ueee' of component 'UE' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'UE' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:13]
+INFO: [Synth 8-3491] module 'clk_divider' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_divider.vhd:4' bound to instance 'clk_butons' of component 'clk_divider' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:47]
 INFO: [Synth 8-638] synthesizing module 'clk_divider' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_divider.vhd:9]
 WARNING: [Synth 8-614] signal 'clk' is read in the process but is not in the sensitivity list [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_divider.vhd:12]
 INFO: [Synth 8-256] done synthesizing module 'clk_divider' (1#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_divider.vhd:9]
-INFO: [Synth 8-3491] module 'clk_mul' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd:21' bound to instance 'clk_modifier' of component 'clk_mul' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:516]
+INFO: [Synth 8-3491] module 'clk_mul' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd:21' bound to instance 'clk_modifier' of component 'clk_mul' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:48]
 INFO: [Synth 8-638] synthesizing module 'clk_mul' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd:26]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 10.125000 - type: double 
@@ -52,7 +54,7 @@ INFO: [Synth 8-113] binding component instance 'mmcm_adv_inst' to cell 'MMCME2_A
 INFO: [Synth 8-113] binding component instance 'clkf_buf' to cell 'BUFG' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd:130]
 INFO: [Synth 8-113] binding component instance 'clkout1_buf' to cell 'BUFG' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd:137]
 INFO: [Synth 8-256] done synthesizing module 'clk_mul' (2#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd:26]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'ebu' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:517]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debu' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:49]
 INFO: [Synth 8-638] synthesizing module 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:25]
 INFO: [Synth 8-3491] module 'bist_d' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/bist_d.vhd:4' bound to instance 'B1' of component 'bist_d' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:42]
 INFO: [Synth 8-638] synthesizing module 'bist_d' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/bist_d.vhd:10]
@@ -63,25 +65,47 @@ INFO: [Synth 8-3491] module 'and_gate_3' declared at 'D:/Proiecte_PSN/vga_contro
 INFO: [Synth 8-638] synthesizing module 'and_gate_3' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'and_gate_3' (4#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'debouncer' (5#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:25]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debd' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:518]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debl' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:519]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debr' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:520]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debm' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:521]
-INFO: [Synth 8-226] default block is never used [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:630]
-INFO: [Synth 8-256] done synthesizing module 'vga_controller' (6#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:30]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debd' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:50]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debl' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:51]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debr' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:52]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd:4' bound to instance 'debm' of component 'debouncer' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:53]
+INFO: [Synth 8-3491] module 'horizontal_counter' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_counter.vhd:6' bound to instance 'horizontal' of component 'horizontal_counter' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'horizontal_counter' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_counter.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'horizontal_counter' (6#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_counter.vhd:11]
+INFO: [Synth 8-3491] module 'vertical_counter' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_counter.vhd:6' bound to instance 'vertical' of component 'vertical_counter' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'vertical_counter' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_counter.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'vertical_counter' (7#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_counter.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'UE' (8#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd:13]
+INFO: [Synth 8-3491] module 'UC' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:6' bound to instance 'uccc' of component 'UC' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'UC' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:28]
+INFO: [Synth 8-3491] module 'horizontal_sync' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_sync.vhd:6' bound to instance 'hs' of component 'horizontal_sync' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'horizontal_sync' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_sync.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'horizontal_sync' (9#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_sync.vhd:12]
+INFO: [Synth 8-3491] module 'vertical_sync' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_sync.vhd:7' bound to instance 'vs' of component 'vertical_sync' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'vertical_sync' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_sync.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'vertical_sync' (10#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_sync.vhd:13]
+INFO: [Synth 8-3491] module 'button_manager' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/button_manager.vhd:6' bound to instance 'bm' of component 'button_manager' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'button_manager' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/button_manager.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'button_manager' (11#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/button_manager.vhd:11]
+INFO: [Synth 8-3491] module 'AfisareImagine' declared at 'D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/AfisareImagine.vhd:6' bound to instance 'ai' of component 'AfisareImagine' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'AfisareImagine' [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/AfisareImagine.vhd:22]
+INFO: [Synth 8-226] default block is never used [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/AfisareImagine.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'AfisareImagine' (12#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/AfisareImagine.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'UC' (13#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'vga_controller' (14#1) [D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd:33]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1566.555 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1567.008 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1566.555 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1567.008 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1566.555 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1567.008 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1566.555 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1567.008 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -95,31 +119,31 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/vga_controll
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1604.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1572.176 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1604.617 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1572.176 ; gain = 0.000
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1604.617 ; gain = 38.062
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1572.176 ; gain = 5.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1604.617 ; gain = 38.062
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1572.176 ; gain = 5.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1604.617 ; gain = 38.062
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1572.176 ; gain = 5.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1604.617 ; gain = 38.062
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1572.176 ; gain = 5.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -157,32 +181,32 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP vga_red3, operation Mode is: A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: Generating DSP vga_red3, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
-DSP Report: operator vga_red3 is absorbed into DSP vga_red3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: Generating DSP VGA_RED_O3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
+DSP Report: operator VGA_RED_O3 is absorbed into DSP VGA_RED_O3.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1604.617 ; gain = 38.062
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1572.176 ; gain = 5.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -192,8 +216,8 @@ ROM: Preliminary Mapping Report
 +---------------+------------+---------------+----------------+
 |Module Name    | RTL Object | Depth x Width | Implemented As | 
 +---------------+------------+---------------+----------------+
-|vga_controller | dino[0]    | 512x293       | LUT            | 
-|vga_controller | dino[0]    | 512x293       | LUT            | 
+|AfisareImagine | dino[0]    | 512x293       | LUT            | 
+|AfisareImagine | dino[0]    | 512x293       | LUT            | 
 +---------------+------------+---------------+----------------+
 
 
@@ -201,14 +225,14 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 +---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name    | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|vga_controller | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vga_controller | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AfisareImagine | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -219,19 +243,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:05 . Memory (MB): peak = 1604.617 ; gain = 38.062
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1582.754 ; gain = 15.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:17 . Memory (MB): peak = 1660.672 ; gain = 94.117
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1641.730 ; gain = 74.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:19 . Memory (MB): peak = 1669.980 ; gain = 103.426
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1663.309 ; gain = 96.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -249,37 +273,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:15 ; elapsed = 00:01:25 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:15 ; elapsed = 00:01:25 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:15 ; elapsed = 00:01:25 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:15 ; elapsed = 00:01:25 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:01:25 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -299,40 +323,39 @@ Report Cell Usage:
 |2     |CARRY4     |   204|
 |3     |DSP48E1    |     6|
 |4     |LUT1       |    86|
-|5     |LUT2       |   314|
-|6     |LUT3       |    65|
-|7     |LUT4       |   375|
-|8     |LUT5       |   113|
-|9     |LUT6       |   748|
+|5     |LUT2       |   311|
+|6     |LUT3       |    71|
+|7     |LUT4       |   380|
+|8     |LUT5       |   111|
+|9     |LUT6       |   745|
 |10    |MMCME2_ADV |     1|
-|11    |MUXF7      |    57|
-|12    |MUXF8      |    18|
+|11    |MUXF7      |    58|
+|12    |MUXF8      |    16|
 |13    |FDRE       |   186|
 |14    |IBUF       |    21|
 |15    |OBUF       |    18|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:05 ; elapsed = 00:01:23 . Memory (MB): peak = 1684.762 ; gain = 80.145
-Synthesis Optimization Complete : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 1684.762 ; gain = 118.207
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:48 . Memory (MB): peak = 1678.055 ; gain = 105.879
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1678.055 ; gain = 111.047
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1684.762 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 286 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1678.055 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 285 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'vga_controller' is not ideal for floorplanning, since the cellview 'vga_controller' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1700.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1693.750 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 60517070
+Synth Design complete, checksum: 3071c7c4
 INFO: [Common 17-83] Releasing license: Synthesis
-49 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+73 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:01:35 . Memory (MB): peak = 1700.520 ; gain = 133.965
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1693.750 ; gain = 126.742
 INFO: [Common 17-1381] The checkpoint 'D:/Proiecte_PSN/vga_controller/vga_controller.runs/synth_1/vga_controller.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file vga_controller_utilization_synth.rpt -pb vga_controller_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 10 17:40:01 2022...
+INFO: [Common 17-206] Exiting Vivado at Sat May 21 00:41:03 2022...

@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -87,10 +89,19 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/rezolutie.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/AfisareImagine.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UC.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/UE.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/bist_d.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/button_manager.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_divider.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/clk_mul.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/debouncer.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_counter.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/horizontal_sync.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_counter.vhd
+  D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vertical_sync.vhd
   D:/Proiecte_PSN/vga_controller/vga_controller.srcs/sources_1/new/vga_controller.vhd
 }
 OPTRACE "Adding files" END { }
