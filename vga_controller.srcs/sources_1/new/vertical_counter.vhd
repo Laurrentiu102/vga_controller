@@ -11,17 +11,17 @@ end vertical_counter;
 
 architecture Behavioral of vertical_counter is
 
-signal vval:natural:=0;
+signal vPosc:natural:=0;
 begin
          vertical_counter:process (clk)
          begin
            if (rising_edge(clk)) then
-             if ((hPos = (HMAX - 1)) and (vval = (VMAX - 1))) then
-               vval <= 0;
+             if ((hPos = (HMAX - 1)) and (vPosc = (VMAX - 1))) then
+               vPosc <= 0;
              elsif (hPos = (HMAX - 1)) then
-               vval <= vval + 1;
+               vPosc <= vPosc + 1;
              end if;
            end if;
          end process;
-         vPos<=vval;
+         vPos<=vPosc;
 end Behavioral;

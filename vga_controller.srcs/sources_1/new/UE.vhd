@@ -4,9 +4,9 @@ library work;
 use work.rez.all;
 
 entity UE is
-    port(clk_100,BTNM,BTNL,BTNR,BTND,BTNU:in std_logic;
-    vval,hval: out natural;
-    BTNMC,BTNLC,BTNRC,BTNDC,BTNUC: out std_logic;
+    port(clk_100,btnm,btnl,btnr,btnd,btnu:in std_logic;
+    vPos,hPos: out natural;
+    btnmc,btnlc,btnrc,btndc,btnuc: out std_logic;
     clkb,clk: out std_logic);
 end UE;
 
@@ -40,22 +40,22 @@ end component;
 
 signal clkc:std_logic;
 signal clkbutton: std_logic;
-signal hPos,vPos:natural;
+signal hPosc,vPosc:natural:=0;
 
 begin
 
         clk_butons:clk_divider port map(CLK_100,clkbutton);
         clk_modifier : clk_mul port map(CLK_100,clkc);
-        debu:debouncer port map(clkc,BTNU,BTNUC);
-        debd:debouncer port map(clkc,BTND,BTNDC);
-        debl:debouncer port map(clkc,BTNL,BTNLC);
-        debr:debouncer port map(clkc,BTNR,BTNRC);
-        debm:debouncer port map(clkc,BTNM,BTNMC);
-        horizontal:horizontal_counter port map(clkc,hPos);
-        vertical:vertical_counter port map(clkc,hPos,vPos);
+        debu:debouncer port map(clkc,btnu,btnuc);
+        debd:debouncer port map(clkc,btnd,btndc);
+        debl:debouncer port map(clkc,btnl,btnlc);
+        debr:debouncer port map(clkc,btnr,btnrc);
+        debm:debouncer port map(clkc,btnm,btnmc);
+        horizontal:horizontal_counter port map(clkc,hPosc);
+        vertical:vertical_counter port map(clkc,hPosc,vPosc);
         
-        vval<=vPos;
-        hval<=hPos;
+        hPos<=hPosc;
+        vPos<=vPosc;
         clkb<=clkbutton;
         clk<=clkc;
         

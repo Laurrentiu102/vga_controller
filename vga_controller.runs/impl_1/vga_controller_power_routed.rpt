@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Sat May 21 00:42:42 2022
+| Date             : Sat May 21 16:36:30 2022
 | Host             : LAURPC running 64-bit major release  (build 9200)
 | Command          : report_power -file vga_controller_power_routed.rpt -pb vga_controller_power_summary_routed.pb -rpx vga_controller_power_routed.rpx
 | Design           : vga_controller
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.214        |
+| Total On-Chip Power (W)  | 0.212        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.142        |
+| Dynamic (W)              | 0.140        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 83.9         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        5 |       --- |             --- |
-| Slice Logic    |     0.004 |     2230 |       --- |             --- |
-|   LUT as Logic |     0.003 |     1567 |     20800 |            7.53 |
+| Slice Logic    |     0.004 |     2217 |       --- |             --- |
+|   LUT as Logic |     0.003 |     1556 |     20800 |            7.48 |
 |   CARRY4       |    <0.001 |      204 |      8150 |            2.50 |
 |   F7/F8 Muxes  |    <0.001 |       74 |     32600 |            0.23 |
-|   Register     |    <0.001 |      189 |     41600 |            0.45 |
+|   Register     |    <0.001 |      186 |     41600 |            0.45 |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       48 |       --- |             --- |
-| Signals        |     0.005 |     2136 |       --- |             --- |
+| Signals        |     0.005 |     2110 |       --- |             --- |
 | MMCM           |     0.123 |        1 |         5 |           20.00 |
 | DSPs           |     0.005 |        6 |        90 |            6.67 |
-| I/O            |     0.002 |       39 |       106 |           36.79 |
+| I/O            |    <0.001 |       35 |       106 |           33.02 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.214 |          |           |                 |
+| Total          |     0.212 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.027 |       0.017 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.081 |       0.068 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,7 +146,7 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| vga_controller   |     0.142 |
+| vga_controller   |     0.140 |
 |   uccc           |     0.010 |
 |     ai           |     0.008 |
 |     bm           |     0.002 |

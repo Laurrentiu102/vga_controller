@@ -40,7 +40,7 @@ component vertical_sync is
 end component;
 
 component button_manager is
-    port(clk,mode,BTNM,BTNL,BTNR,BTND,BTNU: in std_logic;
+    port(clk,mode,btnm,btnl,btnr,btnd,btnu: in std_logic;
     xval,yval: out natural);
 end component;
 
@@ -63,7 +63,7 @@ signal xPos,yPos: natural;
 begin
     hs:horizontal_sync port map(clk,hPos,VGA_HS_O);
     vs:vertical_sync port map(clk,vPos,VGA_VS_O);
-    bm: button_manager port map(clkb,mode,BTNM,BTNL,BTNR,BTND,BTNU,xPos,yPos);
+    bm: button_manager port map(clkb,mode,btnm,btnl,btnr,btnd,btnu,xPos,yPos);
     ai:AfisareImagine port map(clk,vPos,hPos,xPos,yPos,image,mode,vga_red_i,vga_blue_i,vga_green_i,vga_red_o,vga_blue_o,vga_green_o);
 
 end Behavioral;

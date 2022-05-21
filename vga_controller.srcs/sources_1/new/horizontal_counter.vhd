@@ -10,17 +10,17 @@ end horizontal_counter;
 
 architecture Behavioral of horizontal_counter is
 
-signal hval: natural:=0;
+signal hPosc: natural:=0;
 begin
          horizontal_counter:process (clk)
          begin
            if (rising_edge(clk)) then
-             if (hval = (HMAX - 1)) then
-               hval <= 0;
+             if (hPosc = (HMAX - 1)) then
+               hPosc <= 0;
              else
-               hval <= hval + 1;
+               hPosc <= hPosc + 1;
              end if;
            end if;
          end process;
-         hPos<=hval;
+         hPos<=hPosc;
 end Behavioral;
