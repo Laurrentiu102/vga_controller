@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Sat May 21 16:35:56 2022
+| Date         : Mon May 23 13:10:50 2022
 | Host         : LAURPC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file vga_controller_control_sets_placed.rpt
 | Design       : vga_controller
@@ -70,16 +70,16 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------+-------------------------+--------------------------------+------------------+----------------+--------------+
-|         Clock Signal        |      Enable Signal      |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------------------+-------------------------+--------------------------------+------------------+----------------+--------------+
-|  CLK_100_IBUF_BUFG          |                         |                                |                1 |              1 |         1.00 |
-|  ueee/clk_modifier/clk_out1 |                         |                                |               19 |             30 |         1.58 |
-|  ueee/clk_modifier/clk_out1 |                         | ueee/horizontal/vPosc          |               11 |             30 |         2.73 |
-|  clk__0_BUFG                | ueee/debm/B2/E[0]       | uccc/bm/xPos                   |               10 |             31 |         3.10 |
-|  clk__0_BUFG                | ueee/debm/B2/Q_reg_0[0] | uccc/bm/yPos                   |               11 |             31 |         2.82 |
-|  ueee/clk_modifier/clk_out1 | ueee/horizontal/vPosc   | ueee/vertical/vPosc[0]_i_1_n_0 |               11 |             31 |         2.82 |
-|  CLK_100_IBUF_BUFG          |                         | ueee/clk_butons/clear          |                8 |             32 |         4.00 |
-+-----------------------------+-------------------------+--------------------------------+------------------+----------------+--------------+
++-----------------------------------------+-------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|               Clock Signal              |            Enable Signal            |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------+-------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  CLK_100_IBUF_BUFG                      |                                     |                                            |                1 |              1 |         1.00 |
+|  unitate_executie/clk_modifier/clk_out1 |                                     |                                            |               19 |             30 |         1.58 |
+|  unitate_executie/clk_modifier/clk_out1 |                                     | unitate_executie/horizontal/vPosc          |               11 |             30 |         2.73 |
+|  unitate_executie/clk_modifier/clk_out1 | unitate_executie/horizontal/vPosc   | unitate_executie/vertical/vPosc[0]_i_1_n_0 |               11 |             31 |         2.82 |
+|  clk__0_BUFG                            | unitate_executie/debm/B2/Q_reg_0[0] | unitate_control/bm/yPos                    |               11 |             31 |         2.82 |
+|  clk__0_BUFG                            | unitate_executie/debm/B2/E[0]       | unitate_control/bm/xPos                    |               10 |             31 |         3.10 |
+|  CLK_100_IBUF_BUFG                      |                                     | unitate_executie/clk_butons/clear          |                8 |             32 |         4.00 |
++-----------------------------------------+-------------------------------------+--------------------------------------------+------------------+----------------+--------------+
 
 

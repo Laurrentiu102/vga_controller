@@ -75,6 +75,6 @@ signal xPos : natural:=0;
 signal yPos : natural:=0;
 
 begin   
-		ueee:ue port map(clk_100,BTNM,BTNL,BTNR,BTND,BTNU,vPos,hPos,BTNMC,BTNLC,BTNRC,BTNDC,BTNUC,clkb,clk);
-		uccc:uc port map(clk,clkb,hPos,vPos,btnuc,btndc,btnlc,btnrc,btnmc,image,mode,vga_red_i,vga_blue_i,vga_green_i,vga_hs_o,vga_vs_o,vga_red_o,vga_blue_o,vga_green_o);
+		unitate_executie:ue port map(clk_100,BTNM,BTNL,BTNR,BTND,BTNU,vPos,hPos,BTNMC,BTNLC,BTNRC,BTNDC,BTNUC,clkb,clk);
+		unitate_control:uc port map(clk,clkb,hPos,vPos,btnuc,btndc,btnlc,btnrc,btnmc,image,mode,vga_red_i,vga_blue_i,vga_green_i,vga_hs_o,vga_vs_o,vga_red_o,vga_blue_o,vga_green_o);
 end architecture;
